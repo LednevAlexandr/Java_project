@@ -17,8 +17,7 @@ class Solution {
 class Solution {
     public boolean validMountainArray(int[] arr) {
         int index = 0;
-        if (arr.length < 3) return false;
-        if (arr[0] >= arr[1]) return false;
+        if (arr.length < 3 || arr[0] >= arr[1]) return false;
         for (int i = 2;i < arr.length;i++){
             if (arr[i] == arr[i-1]) return  false;
             if (arr[i] < arr[i-1]){
