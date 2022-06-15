@@ -1,25 +1,16 @@
-import java.util.Arrays;
-
-public class Main {
-	static int moveNum = 1;
+public class Main
+{
+    static int moveNum;;
 	static int[][] board = new int[5][5];
 	static int[][] moves = { { -2, 1 }, { -2, -1 }, { 2, 1 }, { 2, -1 }, { -1, 2 }, { -1, -2 }, { 1, 2 }, { 1, -2 } };
 	static int maxMoves = 25;
-
+	
 	public static void main(String[] args) {
-
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board.length; j++) {
-				if (!findPath(i, j, moveNum)) {
-					continue;
-				} else {
-					for (int k = 0; k < board.length; k++) {
-						for (int l = 0; l < board.length; l++) {
-							System.out.print(board[k][l] + " ");
-						}
-						System.out.println();
-					}
-					return;
+				if (findPath(i, j, 1)) {
+				    printSol();
+				    return;
 				}
 			}
 		}
@@ -41,11 +32,17 @@ public class Main {
 		return false;
 	}
 
-	public static boolean isPossibleMove(int curX, int curY) {
-		if (curX > board.length - 1 || curY > board.length - 1 || curX < 0 || curY < 0) {
-			return false;
-		} else {
-			return true;
+	static boolean isPossibleMove(int x, int y) {
+		return x >=0 &&  x < board.length && y >=0 && y < board.length && board[x][y] == 0;
 		}
-	}
+		
+    public static void printSol(){
+        for (int i = 0; i < board.length;i++){
+            for (int j = 0; j < board.length;j++){
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }
