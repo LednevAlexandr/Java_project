@@ -1,6 +1,6 @@
 class Solution {
     public String simplifyPath(String path) {        
-        String arr[]=path.split("/");
+        String[] arr = path.split("/");
         Stack<String> st= new Stack<>();
         for(int i=0;i<arr.length;i++)
         {
@@ -17,14 +17,14 @@ class Solution {
                     st.push(arr[i]);
             }
         }
-        String ans="";
+        String res="";
         while(!st.isEmpty())
         {
             if(st.size()==1)
-                ans=st.pop()+ans;
+               res=st.pop()+res;
             else
-                ans="/"+st.pop()+ans;
+                res="/"+st.pop()+res;
         }           
-        return "/"+ans;      
+        return "/"+res;      
     }
 }
