@@ -11,7 +11,7 @@ public class Main
                 System.out.print("Введите дробное число: ");
                 double num = in.nextDouble();
                 return num;
-            } catch(RuntimeException e) {
+            } catch(InputMismatchException e) {
                     Scanner in = new Scanner(System.in);
                     System.out.print("Введите дробное число: ");
                     double num = in.nextDouble();
