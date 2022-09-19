@@ -5,19 +5,19 @@ public class Main
 		double a = PrintNum();
 		System.out.println(a);
 	}
-	public static double PrintNum(){
+	public static float PrintNum(){
             try {
                 Scanner in = new Scanner(System.in);
                 System.out.print("Введите дробное число: ");
-                double num = in.nextDouble();
+                float num = in.nextFloat();
                 return num;
-            } catch(InputMismatchException e) {
-                    Scanner in = new Scanner(System.in);
-                    System.out.print("Введите дробное число: ");
-                    double num = in.nextDouble();
-                    return num;
+            } catch(RuntimeException e) {
+                        Scanner in = new Scanner(System.in);
+                        System.out.print("Введите дробное число: ");
+                        float num = in.nextFloat();
+                        return num;
+                    }
                 }
                 
 	}
 	
-}
