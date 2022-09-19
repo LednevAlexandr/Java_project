@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main
 {
 	public static void main(String[] args) {
-		double a = PrintNum();
+		float a = PrintNum();
 		System.out.println(a);
 	}
 	public static float PrintNum(){
